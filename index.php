@@ -13,8 +13,7 @@ header("Cache-Control: no-cache");
 header("Accept: text/html; charset=UTF-8");
 header("Set-Cookie: realzcode=ddos-lab-v1.0-$date; Path=/");
 
-/* Change Same Browser User Agent, how to get : echo $_SERVER['HTTP_USER_AGENT'] */
-$browser_user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36";
+$browser_user_agent = $_SERVER['HTTP_USER_AGENT'];
 
 if (isset($_GET['reset']))
 {
@@ -45,7 +44,7 @@ if ($browser_user_agent !== $_SERVER['HTTP_USER_AGENT'])
 {
 	$ip_address = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
 
-	echo "REALCODE DDOS-LAB V1.0\r\n";
+	echo "REALZCODE DDOS-LAB V1.0\r\n";
 	echo "Method: " . $_SERVER['REQUEST_METHOD'] . "\r\n";
 	echo "User-Agent: " . $_SERVER['HTTP_USER_AGENT'] . "\r\n";
 	echo "Ip-Address: $ip_address\r\n";
